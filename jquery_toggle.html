@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <ul>
+        <h1>載入jquery</h1>
+        <p id="blue">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, deleniti.
+        </p>
+        <p id="red">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, deleniti.
+        </p>
+        <button id="hideBtn">hideBtn</button>
+        <button id="showBtn">showBtn</button>
+        <button id="toggleBtn">toggleBtn</button>
+
+    </ul>
+    <!-- 這個cdnjs載入檔 一定要放在最前面才會動 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script>
+        // const content = document.getElementById("content");
+        // content.style.color = "red";
+
+        $(document).ready(function () {
+            // $("#content").hide();
+            // Btn 隱藏 p 文字
+            $("#blue").css('color', 'blue');
+            $("#red").css('color', 'red');
+
+            $("#hideBtn").click(function () {
+                $("#blue").hide();
+                $("#red").hide();
+            });
+
+            $("#showBtn").click(function () {
+                $("#blue").show();
+                $("#red").show();
+            });
+
+            $("p").click(function () {
+                $(this).hide();
+            });
+            // 一個按鍵可以直接開關
+            $("#toggleBtn").click(function () {
+                $("#blue").toggle();
+                $("#red").toggle();
+            });
+
+        });
+    </script>
+</body>
+
+</html>
