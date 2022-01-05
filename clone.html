@@ -16,7 +16,7 @@
         repellat in eos repellendus debitis laudantium eum magnam, consectetur asperiores dolorem libero ut distinctio
         aperiam!</p>
         <div class="container">
-            <table class="table table-hover">
+            <table id="myTable" class="table table-hover">
                 <thead>
                   <tr>
                     <th scope="col">First</th>
@@ -59,13 +59,16 @@
 
     <script>
         $(document).ready(function (){
+            $("#btn2").on('click', function (){
+                cloneTr = $('#myTable').find('tbody').find('tr').last().clone();
+                $('#myTable').find('tbody').find('tr').last().after(cloneTr);
+                $('#myTable').find('tbody').find('tr').last().find('td').empty().text('55688');
+            });
             $("#btn").on('click', function (){
-                $('tr:eq(1)').remove();
+                $('#myTable').find('tbody').find('tr').eq(0).find('td').remove();
             });
-            $("#btn2").on('click' , function () {
-                $('tr:eq(1)').append("<b></b>");
+            // 為什麼不能連續刪？
             });
-        });
     </script>
 </body>
 
