@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>h3 title</h3>
+                <p>event click Lorem ipsum dolor, sit amet consectetur adipisicing elit. In fugit corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+
+                <p id="dblclickP">event dbclick Lorem ipsum dolor, sit amet consectetur adipisicing elit. In fugit
+                    corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+
+                <p id="oneP">one event Lorem ipsum dolor, sit amet consectetur adipisicing elit. In fugit
+                    corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+
+                <p id="mouseenterP">event mouseenter Lorem ipsum dolor, sit amet consectetur adipisicing elit. In fugit
+                    corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+
+                <p id="mouseoutP">event mouseout Lorem ipsum dolor, sit amet consectetur adipisicing elit. In fugit
+                    corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+
+
+                <p id="mouseEvent">mouseEvent mouseenter mouseout Lorem ipsum dolor, sit amet consectetur adipisicing
+                    elit. In fugit
+                    corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+                <p id="hover">mouseEvent mouseenter mouseout Lorem ipsum dolor, sit amet consectetur adipisicing
+                    elit. In fugit
+                    corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+                <div>
+                    <ol>
+                        <li id="liClass">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, tempore?</li>
+                        <li>Lorem ipsum dolor <span>123</span>sit amet consectetur adipisicing elit. Iste, tempore?</li>
+                    </ol>
+                    <ol>
+                        <li id="liClass">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, tempore?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, tempore?</li>
+                    </ol>
+                    <ol>
+                        <li id="liClass">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, tempore?</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, tempore?</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <button id="Btn1">button</button>
+            <button id="Btn2">button2</button>
+            <button id="span">spanchangecolor</button>
+            <button id="liBtn">lichangecolor</button>
+            <button id="olBtn">olchangecolor</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //簡化寫法
+        $(function () {
+            $('#Btn1').on('click', function () {
+                $('p').first().remove();
+            });
+
+            $('#Btn2').eq(1).click(function () {
+                $('p').first().text('12345');
+            });
+            $('#Btn1').on('click', function () {
+                $('div p').css("background-color", "lightblue");
+            });
+            $('#span').on('click' , function(){
+                // $('ol').find('span').addClass("bg-success");
+                $('ol').find('span').addClass("bg-success");
+                
+            });
+            $('#liBtn').on('click',function(){
+                $('ol').find('li').last('#liClass').addClass("bg-info");
+            });
+
+            $('#olBtn').on('click',function(){
+                $('ol').find('li').last().toggleClass("bg-warning");
+                $('ol').find('li').first().toggleClass("bg-warning");
+            });
+        });
+
+    </script>
+</body>
+
+</html>

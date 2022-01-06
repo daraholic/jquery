@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Bordered Table</h2>
+        <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>num</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>1000</td>
+                    <td>1</td>
+                    <td><button type="button" class="submit btn btn-light">submit</button></td>
+                </tr>
+                <tr>
+                    <td>Mary</td>
+                    <td>2000</td>
+                    <td>2</td>
+                    <td><button type="button" class="add btn btn-light">add</button></td>
+                </tr>
+                <tr>
+                    <td>July</td>
+                    <td>3000</td>
+                    <td>3</td>
+                    <td><button type="button" class="del btn btn-light">del</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $(function () {
+            $(".add").click(function () {
+                cloneData=$(this).parentsUntil('form').find('tbody').find('tr').last().clone(true);
+                $(this).parentsUntil('form').find('tbody').find('tr').last().after(cloneData);
+                $(this).parentsUntil('form').find('tbody').find('tr').last().find('input:text').val("");
+            });
+
+            $(".del").click(function () {
+                $(this).parent().closest('tr').remove();
+                // $(this).parentsUntil('form').find('tbody').find('tr').last().after(cloneData);
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

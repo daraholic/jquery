@@ -123,7 +123,9 @@
                 $("#greenBtn").addClass("btn-success");
 
                 // 語法可以估狗查一下
-                $('tr:not(":has(th)"):even').addClass("table-success");
+                // $('tr:not(":has(th)"):even').addClass("table-success");
+                // 另一種寫法
+                $('tr').not(":has(th)").filter(':even').addClass("table-success");
             });
 
 
